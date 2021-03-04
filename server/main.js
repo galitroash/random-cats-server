@@ -10,7 +10,8 @@ const dbModule = require('./dbModule');
 
 app.get('/catapi', (req, res) => {
     dbModule.getAll().then(data => {
-        res.send(data);
+        const result = data[0];
+        res.send(result);
     })
 })
 app.get('/catapi/rand', (req, res) => {
